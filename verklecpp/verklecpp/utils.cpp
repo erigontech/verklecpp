@@ -11,14 +11,18 @@
    limitations under the License.
 */
 
-#include <verklecpp/verkle_node.hpp>
+#include "utils.hpp"
 
-namespace verkle_cpp {
+namespace verklecpp {
 
-class VerkleTree {
-    private:
-    // Demo
-    VerkleNode node;
+hash bytes_to_hash(uint8_t* bytes) {
+    hash ret;
+    std::copy(bytes, bytes + kHashLength, ret.begin());
+    return ret;
+}
+
+uint8_t* hash_to_bytes(hash h) {
+    return h.data();
 }
 
 }

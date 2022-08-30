@@ -1,2 +1,4 @@
+project(cmd)
+
 add_executable(hello_world hello_world.cpp)
-target_link_libraries(hello_world LINK_PUBLIC verklecpp)
+target_link_libraries(hello_world PRIVATE verklecpp)

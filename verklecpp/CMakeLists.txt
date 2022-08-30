@@ -1,6 +1,6 @@
-file(GLOB_RECURSE SRC_FILES "*.cpp")
-file(GLOB_RECURSE HEADER_FILES "*.hpp")
+file(GLOB_RECURSE VERKLECPP_SRC "*.cpp" "*.hpp")
 
-add_library(verklecpp ${SRC_FILES} ${HEADER_FILES})
+list(FILTER VERKLECPP_SRC EXCLUDE REGEX "_test\\.cpp$")
 
-target_include_directories (verklecpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(verklecpp ${VERKLECPP_SRC})
+target_include_directories(verklecpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
